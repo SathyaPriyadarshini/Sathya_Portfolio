@@ -1,23 +1,13 @@
 # Sathya Priyadarshini — Portfolio
 
-🚀 **Live site:**  https://sathyapriyadarshini.github.io/Sathya_Portfolio/SathyaPriyadarshini_portfolio/Code/Sathya_Portfolio.html
+Hi 👋 I’m **Sathya Priyadarshini Murugadoss**, a UI/UX & Product Designer passionate about creating **intuitive, inclusive, and high-impact digital experiences**.  
+
+I combine **user research, design systems, and accessibility** with creativity to craft solutions that truly connect with people.  
+
+👉 [View My Portfolio](https://sathyapriyadarshini.github.io/Sathya_Portfolio/SathyaPriyadarshini_portfolio/Code/Sathya_Portfolio.html)
 
 A curated showcase of my **UI/UX & Interaction Design** work — including case studies, design research, wireframes, prototypes, and final high-fidelity outcomes.  
-
----
-
-## 📂 Contents
-- `Sathya_Portfolio.html` — Landing page
-- `assets/ folder` — Images & media
-- `Portfolio.css` — CSS stylesheets
-- `Portfolio.js` — JavaScript (interactions & animations)
-
----
 
 ## 📬 Contact
 - **Email:** [m.sathyapriyadarshini@gmail.com](mailto:m.sathyapriyadarshini@gmail.com)  
 - **LinkedIn:** [linkedin.com/in/sathya-priyadarshini-murugadoss-88a174186](https://www.linkedin.com/in/sathya-priyadarshini-murugadoss-88a174186/)  
-
----
-
-✨ *This repository is continuously updated with my latest design work and experiments.*  
