@@ -7,10 +7,10 @@ A curated showcase of my **UI/UX & Interaction Design** work — including case 
 ---
 
 ## 📂 Contents
-- `index.html` — Landing page
-- `assets/` — Images & media
-- `styles/` — CSS stylesheets
-- `scripts/` — JavaScript (interactions & animations)
+- `Sathya_Portfolio.html` — Landing page
+- `assets/ folder` — Images & media
+- `Portfolio.css` — CSS stylesheets
+- `Portfolio.js` — JavaScript (interactions & animations)
 
 ---
 
