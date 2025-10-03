@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sathya Priyadarshini — Interaction Designer portfolio: research, prototyping, accessible UI, case studies, certifications, and experience.">
+  <title>Sathya Priyadarshini — About</title>
+</head>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sathya Priyadarshini — About</title>
+
+<!-- Type -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+/* ================= TOKENS ================= */
+:root{
+  --plum:#69454F;
+  --coffee:#5A3E36;
+  --nude:#E8CFCB;
+  --beige:#E7D9C4;
+  --ink:#1A1A1A;
+  --muted:rgba(0,0,0,.62);
+  --paper:#fff;
+  --maxw:1280px;              /* widened so cards breathe */
+  --radius:22px;
+  --shadow:0 18px 40px rgba(0,0,0,.08);
+  --header-h:72px;
+}
+
+/* ================= BASE ================= */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:16px/1.65 "Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; height:auto; display:block}
+a{color:var(--plum); text-decoration:none}
+a:focus-visible{outline:3px solid color-mix(in srgb, var(--plum) 55%, transparent)}
+.container{width:min(var(--maxw),92vw); margin:0 auto}
+section{padding:96px 0}
+@media (min-width:900px){ section{padding:120px 0} }
+section + section{ border-top:1px solid rgba(0,0,0,.04) }
+
+/* subtle dotted bg */
+.body-page{
+  background-image: radial-gradient(rgba(145,95,109,0.12) 1.5px, transparent 1.5px);
+  background-size:28px 28px; background-color:var(--paper);
+}
+:root[data-theme="dark"] .body-page{
+  background-image: radial-gradient(rgba(185,138,152,0.25) 1.5px, transparent 1.5px);
+  background-color:#111; --ink:#eaeaea;
+}
+
+/* ================= HEADER / NAV ================= */
+.site-header{
+  position:sticky; top:0; z-index:3000; height:var(--header-h);
+  background:rgba(255,255,255,.92); border-bottom:1px solid rgba(0,0,0,.06); backdrop-filter:blur(8px);
+}
+.nav-wrap{
+  height:100%; width:min(1200px,94vw); margin:0 auto;
+  display:flex; align-items:center; gap:12px; padding:0 10px;
+}
+.brand img{height:32px}
+
+.main-nav{ margin-left:auto; display:flex; gap:28px; align-items:center; flex-wrap:wrap }
+.main-nav a{ position:relative; padding:6px 2px; white-space:nowrap; color:#1a1a1a; font-weight:600 }
+.main-nav a:hover,.main-nav a.active{ color:var(--plum) }
+.main-nav a.active::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:3px; background:var(--plum); border-radius:2px;
+}
+
+/* burger */
+.nav-toggle{ display:none; margin-left:auto; width:42px; height:42px; border-radius:10px; border:1px solid rgba(0,0,0,.08); background:#fff; align-items:center; justify-content:center }
+.nav-toggle-bar{ width:20px; height:2px; background:#333; border-radius:2px; margin:3px 0; transition:transform .25s,opacity .25s }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){ transform: translateY(5px) rotate(45deg) }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){ opacity:0 }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){ transform: translateY(-5px) rotate(-45deg) }
+.nav-overlay{ position:fixed; inset:var(--header-h) 0 0 0; z-index:2000; background:transparent; opacity:0; pointer-events:none }
+.nav-overlay.is-on{ opacity:1; pointer-events:auto }
+
+@media (max-width: 860px){
+  .nav-toggle{ display:flex }
+  .main-nav{
+    position:fixed; top:var(--header-h); right:12px; z-index:3001;
+    width:min(86vw,300px); max-height:calc(100dvh - var(--header-h) - 16px);
+    overflow:auto; flex-direction:column; gap:6px; padding:12px 16px;
+    background:#fff; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,.16);
+    transform: translateY(-110%); transition: transform .25s ease;
+  }
+  .main-nav.is-open{ transform: translateY(0) }
+  .main-nav a{ padding:12px 8px; border-radius:10px }
+  .main-nav a:hover{ background: rgba(105,69,79,.06) }
+}
+
+/* progress bar */
+.progress{
+  position:fixed; inset:0 0 auto 0; height:3px; z-index:90;
+  background:linear-gradient(90deg,var(--plum),var(--nude));
+  transform-origin:0 50%; transform:scaleX(0);
+}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative; min-height:calc(100svh - var(--header-h));
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding: clamp(40px, 8vh, 120px) 5vw; color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url(assets/about.png) center/cover no-repeat;
+  overflow:hidden;
+}
+.hero-content{ max-width:min(1100px,92vw); display:flex; flex-direction:column; gap: clamp(28px,5vh,44px) }
+.hero-sub{
+  margin:0; font:600 clamp(14px,2vw,20px)/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.14em; text-transform:uppercase; opacity:.95; text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.hero-title{
+  margin:0; font:900 clamp(56px, 12vw, 160px)/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.5px; text-shadow:0 6px 24px rgba(0,0,0,.35);
+}
+.hero-name{ margin:0; font-family:"Great Vibes",cursive; font-size:clamp(28px,5.8vw,60px); text-shadow:0 4px 16px rgba(0,0,0,.35) }
+@media (max-width:768px){
+  .hero-content{ gap: clamp(36px,8vh,60px) }
+  .hero-title{ font-size: clamp(42px, 12vw, 100px) }
+  .hero-name{ font-size: clamp(22px, 6.5vw, 36px) }
+}
+
+/* ================= ABOUT ================= */
+.about-pro{
+  background: var(--plum); color:#fff;
+  border-radius:32px; padding:48px 44px; box-shadow:0 22px 48px rgba(0,0,0,.18);
+}
+.about-pro .grid{ display:grid; gap:36px; grid-template-columns:1.35fr .8fr; align-items:start }
+@media (max-width:900px){ .about-pro{ padding:34px 26px } .about-pro .grid{ grid-template-columns:1fr } }
+.about-copy{ font-size:16.5px; line-height:1.9 }
+.about-title-side{ display:flex; align-items:center; justify-content:flex-end }
+.about-title{ font:900 clamp(28px, 4.8vw, 44px)/1.1 "Playfair Display",serif; text-align:right }
+
+/* stats */
+.about-stats{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+  gap:20px; margin-top:32px;
+}
+.about-stats .stat{
+  background: rgba(255,255,255,.1);
+  padding:18px; border-radius:14px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.about-stats h3{ margin:0; font-size:1.8rem; font-weight:900; color:#fff }
+.about-stats p{ margin:6px 0 0; font-size:.95rem; color:rgba(255,255,255,.85) }
+
+/* ================= TIMELINE ================= */
+.cv-timeline{ position:relative; display:grid; gap:34px; padding:6px 0 }
+.cv-timeline::before{
+  content:""; position:absolute; left:50%; top:0; width:4px; height:var(--cv-line,0px);
+  transform:translateX(-2px);
+  background:linear-gradient(var(--plum), color-mix(in srgb, var(--plum) 35%, transparent));
+  border-radius:4px; transition:height .35s cubic-bezier(.2,.9,.2,1);
+}
+.cv-node{
+  display:grid; grid-template-columns:1fr 40px 1fr; align-items:start; min-height:140px;
+  opacity:.55; transform:translateY(10px); transition:opacity .35s ease, transform .35s ease, filter .35s ease;
+}
+.cv-node .cv-col{ padding:8px 24px }
+.cv-node .cv-col.right{text-align:left} .cv-node .cv-col.left{text-align:right}
+.cv-node h4{ margin:0 0 4px; font-weight:900 }
+.cv-role{ font-weight:600; margin-bottom:2px }
+.cv-place,.cv-date{ color:var(--muted) }
+.cv-bullets{ margin:.5em 0 0; padding-left:18px }
+.cv-bullets li{ margin:.3em 0 }
+.cv-dot{ width:20px; height:20px; border-radius:50%; background:var(--plum); margin-inline:auto; box-shadow:0 0 0 6px #fff; position:relative }
+.cv-dot::after{ content:""; position:absolute; left:50%; top:100%; transform:translateX(-50%); width:4px; height:60px; background:color-mix(in srgb, var(--plum) 30%, transparent); border-radius:3px; opacity:.8 }
+.cv-node.is-active{ opacity:1; transform:translateY(0) }
+.cv-node.is-active h4{ color:var(--plum) }
+
+@media (max-width:840px){
+  .cv-node{ grid-template-columns:1fr 28px 1fr }
+  .cv-node .cv-col{ padding:8px 14px }
+  .cv-node .cv-col.left,.cv-node .cv-col.right{ text-align:left }
+}
+
+/* ================= HIGHLIGHTS ================= */
+.hl-grid{
+  display:grid; gap:32px; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  align-items:stretch; margin-top:40px;
+}
+.hl-card{
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:22px;
+  padding:40px 34px; box-shadow:var(--shadow);
+  display:grid; grid-template-rows:auto 1fr auto; height:100%;
+  transition: box-shadow .3s ease;
+}
+.hl-card:hover{ box-shadow:0 18px 48px rgba(0,0,0,.12) }
+.hl-head h3{
+  margin:0 0 18px; font:800 1.15rem/1.3 "Montserrat",sans-serif; letter-spacing:.5px; text-transform:uppercase; color:var(--ink); position:relative;
+}
+.hl-head h3::after{ content:""; display:block; margin-top:8px; width:38px; height:3px; border-radius:2px; background:var(--plum) }
+.hl-body{ display:flex; flex-direction:column; gap:14px; margin-top:6px }
+.hl-body li{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:20px; align-items:baseline;
+  position:relative; padding:12px 0;
+}
+.hl-body li:not(:last-child)::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:rgba(0,0,0,.06) }
+.hl-body li strong{ font-weight:600; color:#1a1a1a }
+.hl-body li span{ color:rgba(0,0,0,.72) }
+.hl-foot{ min-height:0 }
+
+@media (max-width:780px){
+  .hl-grid{ grid-template-columns:1fr }
+  .hl-card{ padding:28px 22px; grid-template-rows:auto auto auto }
+  .hl-body li{ grid-template-columns:1fr; gap:6px; padding:10px 0 }
+}
+
+/* ================= VOLUNTEERING ================= */
+.vol-card{
+  background:var(--plum); color:#fff; border-radius:22px; padding:36px 32px; box-shadow:var(--shadow);
+  transform:translateY(8px); opacity:0; transition:transform .4s ease, opacity .4s ease, box-shadow .25s ease;
+}
+.vol-card.in{ transform:translateY(0); opacity:1 }
+.vol-head h3{ margin:0 0 10px; font-weight:900 }
+.vol-list{ list-style:none; margin:0; padding:4px 0 0 }
+.vol-list li{ display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-top:1px solid rgba(255,255,255,.18) }
+.vol-list li:first-child{ border-top:none }
+.v-bullet{ width:10px; height:10px; border-radius:50%; background:#fff; box-shadow:0 0 0 4px rgba(255,255,255,.18); margin-top:7px }
+
+/* ================= HOBBIES ================= */
+.hobbies{ background:var(--paper); padding:100px 0; text-align:center }
+.hob-head p.eyebrow{ font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--plum); margin:0 0 10px }
+.hob-head h2{ font:900 clamp(28px,4vw,40px)/1.2 "Playfair Display",serif; margin:0 0 50px }
+.hob-grid{ display:grid; gap:34px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) }
+.hob-item{
+  background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:18px;
+  padding:28px 20px 24px; box-shadow:0 14px 28px rgba(0,0,0,.06);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.hob-item:hover{ transform:translateY(-4px); box-shadow:0 22px 48px rgba(0,0,0,.1) }
+.hob-icon-ring{ width:92px; height:92px; margin:0 auto 14px; border-radius:50%; border:2.5px solid var(--plum); display:grid; place-items:center }
+.hob-icon-ring span{ font-size:34px; line-height:1 }
+.hob-item h3{ margin:0 0 10px; font-weight:800; color:var(--ink) }
+.hob-item p{ color:var(--muted); font-size:.95rem; margin:0 }
+
+/* ================= BUTTONS / FOOTER ================= */
+.btn{
+  --bg:#fff; --fg:#111; --bd:rgba(0,0,0,.1);
+  display:inline-block; position:relative; overflow:hidden;
+  padding:12px 18px; border-radius:14px; border:1px solid var(--bd);
+  background:var(--bg); color:var(--fg); font-weight:700; cursor:pointer;
+  transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease; font-size:16px;
+}
+.btn:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,.10) }
+.btn.primary{ --bg:var(--plum); --fg:#fff; --bd:transparent }
+.btn .ripple{ position:absolute; border-radius:50%; transform:translate(-50%,-50%) scale(0); background:color-mix(in srgb, #fff 40%, var(--plum) 60%); opacity:.35; pointer-events:none; width:10px; height:10px; animation:ripple .6s ease-out forwards }
+@keyframes ripple{ to{ transform:translate(-50%,-50%) scale(22); opacity:0 } }
+footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
+.toast{ position:fixed; left:50%; bottom:24px; transform:translate(-50%,20px); background:#111; color:#fff; padding:8px 12px; border-radius:10px; opacity:0; transition:transform .25s ease, opacity .25s ease; pointer-events:none; font-size:14px; z-index:99 }
+.toast.show{opacity:1; transform:translate(-50%,0)}
+
+/* ================= REVEAL ANIMATIONS ================= */
+.reveal{ opacity:0; transform:translateY(14px); will-change:opacity,transform }
+.reveal.in{ opacity:1; transform:none; transition: opacity .48s ease, transform .48s ease }
+.stagger > *{ opacity:0; transform:translateY(12px) }
+.stagger.in > *{
+  opacity:1; transform:none;
+  transition: opacity .5s ease, transform .5s ease;
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal,.reveal.in,.stagger>*,.stagger.in>*{ transition:none !important; transform:none !important; opacity:1 !important }
+}
+</style>
+</head>
+<body class="body-page">
+
+<!-- progress bar -->
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ===== Header / Nav ===== -->
+<header class="site-header" role="banner">
+  <div class="nav-wrap">
+    <a class="brand" href="#hero" aria-label="Sathya home">
+      <img src="assets/sathya_Logo.png" alt="Sathya logo" decoding="async" />
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#hero" class="active" aria-current="page">Home</a>
+      <a href="#about">About me</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-content reveal in"><!-- hero is visible on load -->
+    <p class="hero-sub">Interaction Design</p>
+    <h1 class="hero-title">Portfolio</h1>
+    <p class="hero-name">Sathya Priyadarshini</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="reveal">
+  <div class="container">
+    <article class="about-pro">
+      <div class="grid">
+        <div class="about-copy">
+          <p>
+            I’m an <strong>Interaction Designer</strong> with an engineering background,
+            passionate about creating intuitive, inclusive experiences. I work across
+            research, prototyping, and high-fidelity UI with a focus on <strong>e-commerce</strong>
+            and <strong>accessibility</strong> crafting products people <strong>trust</strong>, <strong>enjoy</strong>, and return to.
+          </p>
+          <div class="about-stats stagger" data-stagger=".stat">
+            <div class="stat"><h3>10+</h3><p>Projects</p></div>
+            <div class="stat"><h3>100+</h3><p>Hours of Design</p></div>
+            <div class="stat"><h3>20+</h3><p>Usability Tests</p></div>
+            <div class="stat"><h3>50+</h3><p>Users Reached</p></div>
+          </div>
+        </div>
+        <div class="about-title-side">
+          <h2 class="about-title">About Me</h2>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section id="timeline">
+  <div class="container">
+    <div class="cv-timeline" aria-label="Education and Experience">
+      <!-- Node 1 -->
+      <div class="cv-node reveal stagger" data-stagger=".cv-col > *,.cv-dot">
+        <div class="cv-col left">
+          <h4>Monash University</h4>
+          <div class="cv-role">Master of Design (Interaction Design)</div>
+          <div class="cv-place"><em>Melbourne, Australia</em></div>
+          <div class="cv-date"><em>(2024–Present)</em></div>
+        </div>
+        <div class="cv-dot" aria-hidden="true"></div>
+        <div class="cv-col right"></div>
+      </div>
+      <!-- Node 2 -->
+      <div class="cv-node reveal stagger" data-stagger=".cv-col > *, .cv-bullets li, .cv-dot">
+        <div class="cv-col left"></div>
+        <div class="cv-dot" aria-hidden="true"></div>
+        <div class="cv-col right">
+          <h4>KVN Dreams Technologies Pvt Ltd</h4>
+          <div class="cv-role">UI/UX Design Intern</div>
+          <div class="cv-place"><em>Bengaluru, India</em></div>
+          <div class="cv-date"><em>Sep 2023 – Jan 2024</em></div>
+          <ul class="cv-bullets">
+            <li>Conducted user research and competitive analysis to identify usability gaps and opportunities.</li>
+            <li>Created wireframes, user flows, and interactive prototypes in Figma to support new product features.</li>
+            <li>Collaborated with senior designers and developers to ensure design feasibility and consistency across platforms.</li>
+            <li>Facilitated usability testing sessions, documented findings, and iterated designs based on user feedback.</li>
+            <li>Assisted in building a design system with reusable components, improving efficiency and visual consistency.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Node 3 -->
+      <div class="cv-node reveal stagger" data-stagger=".cv-col > *,.cv-dot">
+        <div class="cv-col left">
+          <h4>DesignBoat UI/UX School</h4>
+          <div class="cv-role">UI/UX Design Bootcamp</div>
+          <div class="cv-place"><em>Bengaluru, India</em></div>
+          <div class="cv-date"><em>(Dec 2022 – Aug 2023)</em></div>
+        </div>
+        <div class="cv-dot" aria-hidden="true"></div>
+        <div class="cv-col right"></div>
+      </div>
+      <!-- Node 4 -->
+      <div class="cv-node reveal stagger" data-stagger=".cv-col > *, .cv-bullets li, .cv-dot">
+        <div class="cv-col left"></div>
+        <div class="cv-dot" aria-hidden="true"></div>
+        <div class="cv-col right">
+          <h4>Mphasis Technologies Pvt Ltd</h4>
+          <div class="cv-role">Associate Software Engineer</div>
+          <div class="cv-place"><em>Bengaluru, India</em></div>
+          <div class="cv-date"><em>Sep 2021 – Oct 2022</em></div>
+          <ul class="cv-bullets">
+            <li>Built test automation frameworks using Selenium, Python, and Robot Framework</li>
+            <li>Conducted regression and stress testing for enterprise software</li>
+            <li>Coordinated defect tracking and QA reporting using JIRA and HPQC</li>
+            <li>Interacted with clients to resolve bugs and perform troubleshooting</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Node 5 -->
+      <div class="cv-node reveal stagger" data-stagger=".cv-col > *,.cv-dot">
+        <div class="cv-col left">
+          <h4>Jain University</h4>
+          <div class="cv-role">B.Tech – Computer Science (IoT)</div>
+          <div class="cv-place"><em>Bengaluru, India</em></div>
+          <div class="cv-date"><em>(2017–2021)</em></div>
+        </div>
+        <div class="cv-dot" aria-hidden="true"></div>
+        <div class="cv-col right"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HIGHLIGHTS ===== -->
+<section id="highlights" class="reveal">
+  <div class="container">
+    <div class="hl-grid stagger" data-stagger=".hl-card">
+      <article class="hl-card">
+        <header class="hl-head"><h3>CERTIFICATIONS</h3></header>
+        <ul class="hl-body stagger" data-stagger="li">
+          <li><strong>Adobe Certified Professional</strong><span>UX Design · 2024</span></li>
+          <li><strong>Webflow for Designers</strong><span>LottieFiles · 2024</span></li>
+          <li><strong>UI/UX Design Bootcamp</strong><span>DesignBoat · 2023</span></li>
+          <li><strong>Google UX Design Professional Certificate</strong><span>Coursera · 2022</span></li>
+          <li><strong>AI for Everyone</strong><span>Coursera · 2021</span></li>
+        </ul>
+        <div class="hl-foot"></div>
+      </article>
+
+      <article class="hl-card">
+        <header class="hl-head"><h3>Technical</h3></header>
+        <ul class="hl-body stagger" data-stagger="li">
+          <li><strong>Frontend</strong><span>HTML, CSS, JavaScript</span></li>
+          <li><strong>RWD</strong><span>Responsive Web Design</span></li>
+        </ul>
+        <div class="hl-foot"></div>
+      </article>
+
+      <article class="hl-card">
+        <header class="hl-head"><h3>Skills</h3></header>
+        <ul class="hl-body stagger" data-stagger="li">
+          <li><strong>Interaction Design</strong><span>Flows, wireframes, prototyping</span></li>
+          <li><strong>Design Thinking</strong><span>Human-centred methods</span></li>
+          <li><strong>Research &amp; Usability</strong><span>Interviews, testing</span></li>
+          <li><strong>Journey Mapping</strong><span>Personas, scenarios</span></li>
+        </ul>
+        <div class="hl-foot"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLUNTEERING ===== -->
+<section id="volunteer" class="reveal">
+  <div class="container">
+    <article class="vol-card stagger" data-stagger=".vol-list li">
+      <header class="vol-head"><h3>Volunteering &amp; Leadership</h3></header>
+      <ul class="vol-list">
+        <li><span class="v-bullet" aria-hidden="true"></span><div><strong>Volunteer — NSS Camp</strong><div class="v-meta">2018 – Present</div></div></li>
+        <li><span class="v-bullet" aria-hidden="true"></span><div><strong>Team Member — Zigbee Tech Challenge</strong><div class="v-meta">2019 – 2021</div></div></li>
+        <li><span class="v-bullet" aria-hidden="true"></span><div><strong>Class Representative</strong><div class="v-meta">2017 – 2021</div></div></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ===== HOBBIES ===== -->
+<section id="hobbies" class="hobbies reveal">
+  <div class="container">
+    <header class="hob-head">
+      <p class="eyebrow">Beyond the Screen</p>
+      <h2>My Hobbies</h2>
+    </header>
+
+    <div class="hob-grid stagger" data-stagger=".hob-item">
+      <article class="hob-item">
+        <div class="hob-icon-ring"><span>🍳</span></div>
+        <h3>Cooking</h3>
+        <p>Experimenting with recipes and flavors to relax and recharge.</p>
+      </article>
+
+      <article class="hob-item">
+        <div class="hob-icon-ring"><span>🧁</span></div>
+        <h3>Baking</h3>
+        <p>From cupcakes to crusty loaves precision meets creativity.</p>
+      </article>
+
+      <article class="hob-item">
+        <div class="hob-icon-ring"><span>🏊‍♀️</span></div>
+        <h3>Swimming</h3>
+        <p>Clears the mind and keeps my energy up for design sprints.</p>
+      </article>
+
+      <article class="hob-item">
+        <div class="hob-icon-ring"><span>🌱</span></div>
+        <h3>Gardening</h3>
+        <p>Growing herbs and greens slow, steady, and satisfying.</p>
+      </article>
+
+      <article class="hob-item">
+        <div class="hob-icon-ring"><span>✈️</span></div>
+        <h3>Traveling</h3>
+        <p>Exploring cultures and ideas that inform my design lens.</p>
+      </article>
+
+      <article class="hob-item">
+        <div class="hob-icon-ring"><span>🎨</span></div>
+        <h3>Mandalas</h3>
+        <p>Intricate patterns that blend focus and creativity.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <div class="container" style="margin-bottom:16px">
+    <a class="btn primary" href="assets/Sathya_Portfolio.html" data-ripple>View my work</a>
+    <a class="btn" href="assets/cv Interaction designer.png" data-ripple>Download CV</a>
+  </div>
+  © <span id="year"></span> Sathya Priyadarshini ·
+  <a href="mailto:m.sathyapriyadarshini@gmail.com" id="copyMail" data-copy="m.sathyapriyadarshini@gmail.com">Email</a> ·
+  <a href="https://www.behance.net/sathyapriyadarshini">Behance</a> ·
+  <a href="https://www.linkedin.com/in/sathya-priyadarshini-murugadoss-88a174186/">LinkedIn</a>
+  <span id="toast" class="toast" role="status" aria-live="polite"></span>
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+
+const progress = document.getElementById('progress');
+function setProgress(){
+  const h=document.documentElement, sc=h.scrollTop, dh=h.scrollHeight-h.clientHeight;
+  progress.style.transform = `scaleX(${dh ? sc/dh : 0})`;
+}
+addEventListener('scroll', setProgress, { passive:true }); setProgress();
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const el = entry.target;
+    el.classList.add('in');             
+    if(el.classList.contains('stagger')){
+      const sel = el.dataset.stagger || '> *';
+      const kids = el.querySelectorAll(sel);
+      kids.forEach((kid,i)=>{
+        kid.style.transitionDelay = reduce ? '0s' : `${Math.min(i*80, 560)}ms`;
+        kid.style.willChange = 'opacity, transform';
+        requestAnimationFrame(()=> kid.style.opacity = 1);
+      });
+      el.classList.add('in');
+    }
+    io.unobserve(el);
+  });
+},{ rootMargin:'0px 0px -10% 0px', threshold:.15 });
+
+document.querySelectorAll('.reveal, .stagger').forEach(el=> io.observe(el));
+
+(()=>{
+  const tl = document.querySelector('.cv-timeline');
+  const rows = [...document.querySelectorAll('.cv-timeline .cv-node')];
+  if(!tl || !rows.length) return;
+  let active = null;
+  const growTo = el => {
+    const y = el.offsetTop + (el.offsetHeight/2);
+    tl.style.setProperty('--cv-line', y + 'px');
+  };
+  const obs = new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{
+      if(e.isIntersecting){
+        active && active.classList.remove('is-active');
+        active = e.target; active.classList.add('is-active'); growTo(active);
+      }
+    });
+  }, { threshold:0.35, rootMargin:'-40% 0px -40% 0px' });
+  rows.forEach(r=>obs.observe(r));
+  addEventListener('resize', ()=> active && growTo(active));
+})();
+
+document.querySelectorAll('[data-ripple]').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    const r=document.createElement('span'); r.className='ripple';
+    const rect=btn.getBoundingClientRect();
+    r.style.left=(e.clientX-rect.left)+'px';
+    r.style.top =(e.clientY-rect.top )+'px';
+    btn.appendChild(r); setTimeout(()=>r.remove(),650);
+  });
+});
+
+const mail = document.getElementById('copyMail'), toast = document.getElementById('toast');
+mail?.addEventListener('contextmenu',e=>e.preventDefault());
+mail?.addEventListener('click',e=>{
+  if(e.metaKey||e.ctrlKey) return;
+  e.preventDefault();
+  navigator.clipboard.writeText(mail.dataset.copy || mail.textContent || '').then(()=>{
+    toast.textContent='Email copied ✨'; toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),1400);
+  });
+});
+
+const navToggle = document.getElementById('navToggle');
+const mainNav   = document.getElementById('mainNav');
+let navOverlay  = document.querySelector('.nav-overlay');
+if(!navOverlay){ navOverlay = document.createElement('div'); navOverlay.className='nav-overlay'; document.body.appendChild(navOverlay); }
+function openNav(){ navToggle?.setAttribute('aria-expanded','true'); mainNav?.classList.add('is-open'); document.body.classList.add('nav-open'); navOverlay.classList.add('is-on'); }
+function closeNav(){ navToggle?.setAttribute('aria-expanded','false'); mainNav?.classList.remove('is-open'); document.body.classList.remove('nav-open'); navOverlay.classList.remove('is-on'); }
+navToggle?.addEventListener('click', ()=> (navToggle.getAttribute('aria-expanded')==='true') ? closeNav() : openNav());
+navOverlay?.addEventListener('click', closeNav);
+
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  const id = a.getAttribute('href'); if (!id || id === '#') return;
+  const target = document.querySelector(id); if (!target) return;
+  e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' });
+  document.querySelectorAll('.main-nav a').forEach(x => x.classList.remove('active'));
+  document.querySelector(`.main-nav a[href="${id}"]`)?.classList.add('active');
+  if (mainNav.classList.contains('is-open')) closeNav();
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
