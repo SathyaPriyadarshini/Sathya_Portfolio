@@ -1,6 +1,6 @@
 # Sathya Priyadarshini — Portfolio
 
-🚀 **Live site:** [[sathyapriyadarshini.github.io/Sathya_Portfolio](https://sathyapriyadarshini.github.io/Sathya_Portfolio/)](https://sathyapriyadarshini.github.io/Sathya_Portfolio/Sathya_Portfolio.html)
+🚀 **Live site:**  https://sathyapriyadarshini.github.io/Sathya_Portfolio/SathyaPriyadarshini_portfolio/Code/Sathya_Portfolio.html
 
 A curated showcase of my **UI/UX & Interaction Design** work — including case studies, design research, wireframes, prototypes, and final high-fidelity outcomes.  
 
