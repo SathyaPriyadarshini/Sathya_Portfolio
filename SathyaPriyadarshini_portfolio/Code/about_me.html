@@ -1,15 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sathya Priyadarshini — Interaction Designer portfolio: research, prototyping, accessible UI, case studies, certifications, and experience.">
-  <title>Sathya Priyadarshini — About</title>
-</head>
-<head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sathya Priyadarshini — About</title>
+<title>About Sathya Priyadarshini | UI/UX and Product Designer</title>
+  <link rel="icon" type="image/png" href="assets/sathya_Logo.png">
 
 <!-- Type -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
@@ -232,7 +227,9 @@ section + section{ border-top:1px solid rgba(0,0,0,.04) }
 .hobbies{ background:var(--paper); padding:100px 0; text-align:center }
 .hob-head p.eyebrow{ font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--plum); margin:0 0 10px }
 .hob-head h2{ font:900 clamp(28px,4vw,40px)/1.2 "Playfair Display",serif; margin:0 0 50px }
-.hob-grid{ display:grid; gap:34px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) }
+.hob-grid{ display:grid; gap:28px; grid-template-columns:repeat(3,1fr) }
+@media (max-width:900px){ .hob-grid{ grid-template-columns:repeat(2,1fr); gap:18px } }
+@media (max-width:420px){ .hob-grid{ gap:12px } .hob-item{ padding:22px 12px 20px } }
 .hob-item{
   background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:18px;
   padding:28px 20px 24px; box-shadow:0 14px 28px rgba(0,0,0,.06);
@@ -271,6 +268,66 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
 @media (prefers-reduced-motion: reduce){
   .reveal,.reveal.in,.stagger>*,.stagger.in>*{ transition:none !important; transform:none !important; opacity:1 !important }
 }
+
+/* ===== POLISH v2 ===== */
+.brand img{height:44px;width:44px;object-fit:contain}
+.hero{
+  display:block; text-align:left; color:var(--ink);
+  background:linear-gradient(135deg,#fff 0%,#fbf4f2 55%,#f3dfe0 100%);
+  padding:clamp(40px,8vh,96px) 0;
+}
+.hero .hb{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.hero .hb1{width:460px;height:460px;right:-140px;top:-140px;background:radial-gradient(circle at 35% 35%,#e8cfcb,transparent 70%);opacity:.85}
+.hero .hb2{width:320px;height:320px;left:-120px;bottom:-120px;background:radial-gradient(circle at 60% 40%,#e8cfcb,transparent 70%);opacity:.6}
+.hero-inner{position:relative;z-index:1;width:min(1200px,92vw);margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center}
+.hero-content{max-width:none;gap:0}
+.hero-sub{color:var(--plum);text-shadow:none;opacity:1;letter-spacing:.16em;margin-bottom:18px}
+.hero-title{font:800 clamp(40px,6.4vw,84px)/1.02 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-shadow:none;letter-spacing:-.01em;color:var(--ink)}
+.hero-name{font-size:clamp(44px,7.4vw,96px);line-height:1.05;color:var(--plum);text-shadow:none;margin:2px 0 22px}
+.hero-lede{margin:0 0 28px;max-width:34em;font-size:clamp(16px,1.5vw,19px);line-height:1.7;color:var(--muted)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-down{margin-top:36px;width:46px;height:46px;border-radius:50%;border:2px solid var(--plum);color:var(--plum);display:grid;place-items:center;font-size:20px;animation:bob 2s ease-in-out infinite}
+.hero-down:hover{background:var(--plum);color:#fff}
+@keyframes bob{50%{transform:translateY(6px)}}
+.hero-photo{position:relative;justify-self:center;width:min(100%,440px)}
+.hero-photo .arch{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:4/5;background:var(--plum);box-shadow:20px 22px 0 -2px var(--nude),0 28px 60px rgba(105,69,79,.28)}
+.hero-photo .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hero-photo .chip{position:absolute;background:#fff;border-radius:999px;padding:9px 16px;font:600 13px/1 "Montserrat",sans-serif;color:var(--plum);box-shadow:0 10px 26px rgba(0,0,0,.14);display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.hero-photo .chip1{left:-8%;bottom:16%}
+.hero-photo .chip2{right:-4%;top:10%}
+.hero-photo .chip i{width:8px;height:8px;border-radius:50%;background:#2fb36b}
+@media (max-width:860px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-lede{margin-inline:auto}.hero-cta{justify-content:center}.hero-down{margin-inline:auto}
+  .hero-photo{order:-1;width:min(70vw,320px)}
+  .hero-photo .chip1{left:-4%}.hero-photo .chip2{right:-2%}
+}
+.sec-head{text-align:center;margin:0 0 clamp(36px,5vw,56px)}
+.sec-head .eyebrow{font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--plum);margin:0 0 8px;font-size:13px}
+.sec-head h2{font:900 clamp(28px,4vw,40px)/1.2 "Playfair Display",serif;margin:0}
+.hl-card{border-top:4px solid var(--plum)}
+.v-meta{color:rgba(255,255,255,.75);font-size:.92rem}
+
+/* about card alignment */
+.about-pro{padding:clamp(32px,4.5vw,56px)}
+.about-pro .grid{grid-template-columns:1fr;gap:18px}
+.about-title-side{justify-content:flex-start}
+.about-title{text-align:left}
+.about-copy{max-width:60em;font-size:clamp(16px,1.35vw,18px)}
+.about-pro .about-stats{grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,24px);margin-top:clamp(28px,4vw,40px)}
+.about-stats .stat{padding:22px 12px}
+@media (max-width:700px){.about-pro .about-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* mobile timeline: single column */
+@media (max-width:700px){
+  .hero-sub{letter-spacing:.08em;font-size:12px}
+  .cv-timeline::before{left:10px;transform:none}
+  .cv-node{grid-template-columns:20px 1fr;column-gap:14px;min-height:0}
+  .cv-node .cv-dot{grid-column:1;grid-row:1;margin:6px 0 0;width:18px;height:18px;box-shadow:0 0 0 5px #fff}
+  .cv-node .cv-dot::after{display:none}
+  .cv-node .cv-col{grid-column:2;grid-row:1;padding:0 0 6px;text-align:left!important}
+  .cv-node .cv-col:empty{display:none}
+}
 </style>
 </head>
 <body class="body-page">
@@ -281,13 +338,13 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
 <!-- ===== Header / Nav ===== -->
 <header class="site-header" role="banner">
   <div class="nav-wrap">
-    <a class="brand" href="#hero" aria-label="Sathya home">
+    <a class="brand" href="Sathya_Portfolio.html" aria-label="Back to portfolio home">
       <img src="assets/sathya_Logo.png" alt="Sathya logo" decoding="async" />
     </a>
 
     <nav class="main-nav" id="mainNav" aria-label="Primary">
-      <a href="#hero" class="active" aria-current="page">Home</a>
-      <a href="#about">About me</a>
+      <a href="Sathya_Portfolio.html">Home</a>
+      <a href="#hero" class="active" aria-current="page">About me</a>
       <a href="#timeline">Timeline</a>
       <a href="#highlights">Highlights</a>
       <a href="#hobbies">Hobbies</a>
@@ -304,10 +361,25 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
-  <div class="hero-content reveal in"><!-- hero is visible on load -->
-    <p class="hero-sub">Interaction Design</p>
-    <h1 class="hero-title">Portfolio</h1>
-    <p class="hero-name">Sathya Priyadarshini</p>
+  <span class="hb hb1" aria-hidden="true"></span><span class="hb hb2" aria-hidden="true"></span>
+  <div class="hero-inner">
+    <div class="hero-content reveal in">
+      <p class="hero-sub">UI/UX, Product & Graphic Designer · Perth, WA</p>
+      <h1 class="hero-title">Hi, I’m</h1>
+      <p class="hero-name">Sathya Priyadarshini</p>
+      <p class="hero-lede">I design intuitive, inclusive digital experiences, from research and prototyping to branding and polished UI, with an engineering mind and a maker’s heart.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="Sathya_Portfolio.html#work" data-ripple>View my work</a>
+        <a class="btn" href="assets/Sathya_Priyadarshini_Resume.pdf" target="_blank" rel="noopener" data-ripple>Resume (PDF)</a>
+        <a class="btn" href="assets/Sathya_Priyadarshini_CoverLetter.pdf" target="_blank" rel="noopener" data-ripple>Cover letter</a>
+      </div>
+      <a class="hero-down" href="#about" aria-label="Scroll to About">↓</a>
+    </div>
+    <div class="hero-photo reveal in">
+      <div class="arch"><img src="assets/Profile.jpeg" alt="Sathya Priyadarshini" decoding="async" /></div>
+      <span class="chip chip1">Master of Design · Monash</span>
+      <span class="chip chip2"><i></i> Open to roles across Australia</span>
+    </div>
   </div>
 </section>
 
@@ -316,23 +388,23 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
   <div class="container">
     <article class="about-pro">
       <div class="grid">
-        <div class="about-copy">
-          <p>
-            I’m an <strong>Interaction Designer</strong> with an engineering background,
-            passionate about creating intuitive, inclusive experiences. I work across
-            research, prototyping, and high-fidelity UI with a focus on <strong>e-commerce</strong>
-            and <strong>accessibility</strong> crafting products people <strong>trust</strong>, <strong>enjoy</strong>, and return to.
-          </p>
-          <div class="about-stats stagger" data-stagger=".stat">
-            <div class="stat"><h3>10+</h3><p>Projects</p></div>
-            <div class="stat"><h3>100+</h3><p>Hours of Design</p></div>
-            <div class="stat"><h3>20+</h3><p>Usability Tests</p></div>
-            <div class="stat"><h3>50+</h3><p>Users Reached</p></div>
-          </div>
-        </div>
         <div class="about-title-side">
           <h2 class="about-title">About Me</h2>
         </div>
+        <div class="about-copy">
+          <p>
+            I’m a <strong>UI/UX and Interaction Designer</strong> with an engineering background,
+            passionate about creating intuitive, inclusive experiences. I work across
+            research, prototyping, and high-fidelity UI with a focus on <strong>e-commerce</strong>
+            and <strong>accessibility</strong>, crafting products people <strong>trust</strong>, <strong>enjoy</strong>, and return to.
+          </p>
+        </div>
+      </div>
+      <div class="about-stats stagger" data-stagger=".stat">
+        <div class="stat"><h3>10+</h3><p>Projects</p></div>
+        <div class="stat"><h3>100+</h3><p>Hours of Design</p></div>
+        <div class="stat"><h3>20+</h3><p>Usability Tests</p></div>
+        <div class="stat"><h3>50+</h3><p>Users Reached</p></div>
       </div>
     </article>
   </div>
@@ -341,14 +413,30 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
 <!-- ===== TIMELINE ===== -->
 <section id="timeline">
   <div class="container">
+    <header class="sec-head"><p class="eyebrow">Journey</p><h2>Experience &amp; Education</h2></header>
     <div class="cv-timeline" aria-label="Education and Experience">
+      <!-- Node 0 -->
+      <div class="cv-node reveal stagger" data-stagger=".cv-col > *, .cv-bullets li, .cv-dot">
+        <div class="cv-col left"></div>
+        <div class="cv-dot" aria-hidden="true"></div>
+        <div class="cv-col right">
+          <h4>Beta Builders</h4>
+          <div class="cv-role">Design Team Lead (part-time, remote)</div>
+          <div class="cv-place"><em>Perth, Australia</em></div>
+          <div class="cv-date"><em>Jul 2026 – Present</em></div>
+          <ul class="cv-bullets">
+            <li>Leading a community of 15 to 30 designers and developers.</li>
+            <li>Running LinkedIn content, Medium blogs, events, meetups and workshops.</li>
+          </ul>
+        </div>
+      </div>
       <!-- Node 1 -->
       <div class="cv-node reveal stagger" data-stagger=".cv-col > *,.cv-dot">
         <div class="cv-col left">
           <h4>Monash University</h4>
           <div class="cv-role">Master of Design (Interaction Design)</div>
           <div class="cv-place"><em>Melbourne, Australia</em></div>
-          <div class="cv-date"><em>(2024–Present)</em></div>
+          <div class="cv-date"><em>2024 – 2026</em></div>
         </div>
         <div class="cv-dot" aria-hidden="true"></div>
         <div class="cv-col right"></div>
@@ -377,7 +465,7 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
           <h4>DesignBoat UI/UX School</h4>
           <div class="cv-role">UI/UX Design Bootcamp</div>
           <div class="cv-place"><em>Bengaluru, India</em></div>
-          <div class="cv-date"><em>(Dec 2022 – Aug 2023)</em></div>
+          <div class="cv-date"><em>Dec 2022 – Aug 2023</em></div>
         </div>
         <div class="cv-dot" aria-hidden="true"></div>
         <div class="cv-col right"></div>
@@ -392,10 +480,10 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
           <div class="cv-place"><em>Bengaluru, India</em></div>
           <div class="cv-date"><em>Sep 2021 – Oct 2022</em></div>
           <ul class="cv-bullets">
-            <li>Built test automation frameworks using Selenium, Python, and Robot Framework</li>
-            <li>Conducted regression and stress testing for enterprise software</li>
-            <li>Coordinated defect tracking and QA reporting using JIRA and HPQC</li>
-            <li>Interacted with clients to resolve bugs and perform troubleshooting</li>
+            <li>Built test automation frameworks using Selenium, Python, and Robot Framework.</li>
+            <li>Conducted regression and stress testing for enterprise software.</li>
+            <li>Coordinated defect tracking and QA reporting using JIRA and HPQC.</li>
+            <li>Interacted with clients to resolve bugs and perform troubleshooting.</li>
           </ul>
         </div>
       </div>
@@ -405,7 +493,7 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
           <h4>Jain University</h4>
           <div class="cv-role">B.Tech – Computer Science (IoT)</div>
           <div class="cv-place"><em>Bengaluru, India</em></div>
-          <div class="cv-date"><em>(2017–2021)</em></div>
+          <div class="cv-date"><em>2017 – 2021</em></div>
         </div>
         <div class="cv-dot" aria-hidden="true"></div>
         <div class="cv-col right"></div>
@@ -417,6 +505,7 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
 <!-- ===== HIGHLIGHTS ===== -->
 <section id="highlights" class="reveal">
   <div class="container">
+    <header class="sec-head"><p class="eyebrow">At a glance</p><h2>Highlights</h2></header>
     <div class="hl-grid stagger" data-stagger=".hl-card">
       <article class="hl-card">
         <header class="hl-head"><h3>CERTIFICATIONS</h3></header>
@@ -433,8 +522,11 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
       <article class="hl-card">
         <header class="hl-head"><h3>Technical</h3></header>
         <ul class="hl-body stagger" data-stagger="li">
+          <li><strong>Design tools</strong><span>Figma, Adobe CC, Miro</span></li>
+          <li><strong>Motion &amp; 3D</strong><span>Maya, Cinema 4D</span></li>
           <li><strong>Frontend</strong><span>HTML, CSS, JavaScript</span></li>
-          <li><strong>RWD</strong><span>Responsive Web Design</span></li>
+          <li><strong>Web</strong><span>Webflow, responsive design</span></li>
+          <li><strong>Standards</strong><span>WCAG 2.1 accessibility</span></li>
         </ul>
         <div class="hl-foot"></div>
       </article>
@@ -479,13 +571,13 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
       <article class="hob-item">
         <div class="hob-icon-ring"><span>🍳</span></div>
         <h3>Cooking</h3>
-        <p>Experimenting with recipes and flavors to relax and recharge.</p>
+        <p>Experimenting with recipes and flavours to relax and recharge.</p>
       </article>
 
       <article class="hob-item">
         <div class="hob-icon-ring"><span>🧁</span></div>
         <h3>Baking</h3>
-        <p>From cupcakes to crusty loaves precision meets creativity.</p>
+        <p>From cupcakes to crusty loaves, precision meets creativity.</p>
       </article>
 
       <article class="hob-item">
@@ -497,12 +589,12 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
       <article class="hob-item">
         <div class="hob-icon-ring"><span>🌱</span></div>
         <h3>Gardening</h3>
-        <p>Growing herbs and greens slow, steady, and satisfying.</p>
+        <p>Growing herbs and greens: slow, steady and satisfying.</p>
       </article>
 
       <article class="hob-item">
         <div class="hob-icon-ring"><span>✈️</span></div>
-        <h3>Traveling</h3>
+        <h3>Travelling</h3>
         <p>Exploring cultures and ideas that inform my design lens.</p>
       </article>
 
@@ -518,8 +610,9 @@ footer{ padding:56px 0 90px; text-align:center; color:#666; font-size:14px }
 <!-- ===== FOOTER ===== -->
 <footer id="contact">
   <div class="container" style="margin-bottom:16px">
-    <a class="btn primary" href="assets/Sathya_Portfolio.html" data-ripple>View my work</a>
-    <a class="btn" href="assets/cv Interaction designer.png" data-ripple>Download CV</a>
+    <a class="btn primary" href="Sathya_Portfolio.html#work" data-ripple>View my work</a>
+    <a class="btn" href="assets/Sathya_Priyadarshini_Resume.pdf" target="_blank" rel="noopener" data-ripple>Resume (PDF)</a>
+        <a class="btn" href="assets/Sathya_Priyadarshini_CoverLetter.pdf" target="_blank" rel="noopener" data-ripple>Cover letter</a>
   </div>
   © <span id="year"></span> Sathya Priyadarshini ·
   <a href="mailto:m.sathyapriyadarshini@gmail.com" id="copyMail" data-copy="m.sathyapriyadarshini@gmail.com">Email</a> ·

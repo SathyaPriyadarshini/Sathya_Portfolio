@@ -151,6 +151,7 @@
     }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
 
     io.observe(title);
+    setTimeout(()=>title.classList.add('in-view'),1400);
   })();
 
   
@@ -193,3 +194,13 @@ document.addEventListener('click', (e) => {
     closeNav();
   }
 });
+
+// intro: gentle fade/scale as the page scrolls away
+(function(){
+  const intro=document.getElementById('intro');
+  if(!intro||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let t=false;
+  const upd=()=>{t=false;const p=Math.min(1,Math.max(0,window.scrollY/(intro.offsetHeight*0.75)));intro.style.setProperty('--p',p.toFixed(3));};
+  addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(upd);}},{passive:true});
+  upd();
+})();
