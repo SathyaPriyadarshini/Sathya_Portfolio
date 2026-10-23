@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paper Boat Advertising and Brand Kit | Sathya Priyadarshini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F8F0D8;--green:#063B25;--leaf:#159447;--lime:#B5D63B;--jamun:#632179;--gold:#F5A600;--orange:#F5640A;--ink:#0B2A1A;
+ --ease:cubic-bezier(.16,1,.3,1);--bg:#F5A600;--fg:#3b1d00;--font:'Poppins',system-ui,sans-serif;--serif:'Rozha One',Georgia,serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,44px);transition:background .3s,box-shadow .3s,transform .6s var(--ease)}
+.nav.h{transform:translateY(-110%)}
+.nav.s{background:rgba(248,240,216,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(6,59,37,.1)}
+.nav img{height:38px;width:auto}
+.nav ul{display:flex;gap:clamp(14px,3vw,34px);list-style:none;padding:0}
+.nav a{color:var(--green);text-decoration:none;font-weight:600;font-size:14px}
+.nav a:hover{color:var(--orange)}
+@media(max-width:640px){.nav ul li:nth-child(n+3){display:none}}
+/* HERO */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;padding:110px 0 80px;overflow:hidden;background:radial-gradient(circle at 78% 40%,#FBE29A 0,transparent 55%),var(--cream)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,70px);align-items:center}
+.eyebrow{font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+.hero h1{font:400 clamp(44px,6.6vw,92px)/1 var(--serif);color:var(--green);margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{font-size:clamp(16px,1.5vw,19px);line-height:1.7;max-width:480px;color:#2E5A3A}
+.hero .btn{display:inline-block;margin-top:30px;padding:15px 30px;border-radius:999px;background:var(--green);color:var(--cream);font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 12px 26px rgba(6,59,37,.25)}
+.hero .btn:hover{transform:translateY(-3px)}
+.hero-art{position:relative}
+.hero-art .main{border-radius:36px;box-shadow:0 40px 80px rgba(120,60,0,.3);transform:rotate(2.5deg)}
+.hero-art .boat{position:absolute;width:26%;left:-9%;bottom:8%;animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 12px 12px rgba(0,0,0,.25))}
+.hero-art .chip{position:absolute;right:-3%;top:6%;background:#fff;border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;color:var(--green);box-shadow:0 12px 26px rgba(0,0,0,.15);animation:bob 6s ease-in-out -2s infinite}
+@keyframes bob{50%{transform:translateY(-14px) rotate(-3deg)}}
+.wave{display:block;width:100%;height:80px;position:absolute;bottom:-1px;left:0}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-art{max-width:420px;margin:10px auto 0}.hero-art .boat{left:-4%}}
+/* MARQUEE */
+.mq{background:var(--green);color:var(--cream);overflow:hidden;padding:18px 0;white-space:nowrap}
+.mq div{display:inline-flex;gap:40px;will-change:transform;font:400 clamp(22px,3vw,34px) var(--serif)}
+.mq span{display:inline-flex;align-items:center;gap:40px}.mq span::after{content:"";width:14px;height:14px;background:var(--gold);transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* FLAVOURS (sticky scroll) */
+.flv{position:relative;height:440vh;background:var(--bg);color:var(--fg);transition:background .6s ease,color .6s ease}
+.stage{position:sticky;top:0;height:100svh;display:grid;align-items:center;overflow:hidden}
+.stage .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,5vw,70px);align-items:center}
+.ftxt{position:relative;min-height:340px}
+.fi{position:absolute;inset:0;opacity:0;transform:translateY(56px);transition:opacity .5s ease,transform .9s var(--ease);pointer-events:none;display:flex;flex-direction:column;justify-content:center}
+.fi.past{transform:translateY(-56px)}
+.fi.on{opacity:1;transform:none}
+.fi .no{font-weight:600;letter-spacing:.2em;font-size:13px;opacity:.75}
+.fi h2{font:400 clamp(48px,7vw,104px)/.95 var(--serif);margin:10px 0 16px}
+.fi p{font-size:clamp(16px,1.6vw,20px);max-width:400px;line-height:1.6}
+.fimg{position:relative;aspect-ratio:1;max-width:560px;width:100%;justify-self:center;transform:translate3d(0,var(--ty,0px),0) rotate(var(--rot,0deg));will-change:transform}
+.fimg::before{content:"";position:absolute;inset:-9%;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(var(--sc,.9));transition:transform 1.2s var(--ease)}
+.fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:34px;opacity:0;transform:translateY(70px) scale(.88) rotate(5deg);transition:opacity .6s ease,transform 1s var(--ease);box-shadow:0 36px 70px rgba(0,0,0,.28)}
+.fimg img.past{transform:translateY(-70px) scale(.88) rotate(-5deg)}
+.fimg img.on{opacity:1;transform:none}
+.dots{position:absolute;right:clamp(14px,3vw,40px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px}
+.dots i{width:10px;height:10px;border-radius:50%;background:currentColor;opacity:.3;transition:.3s}.dots i.on{opacity:1;transform:scale(1.5)}
+.hint{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+@media(max-width:860px){.stage .wrap{grid-template-columns:1fr;gap:10px;align-content:center}.ftxt{min-height:200px;order:2;text-align:center}.fi{align-items:center}.fimg{max-width:min(78vw,380px);order:1}.fi h2{font-size:clamp(40px,12vw,64px)}.dots{display:none}}
+/* CAMPAIGN */
+.camp{padding:clamp(70px,10vw,140px) 0;background:var(--cream)}
+.sec-h{font:400 clamp(34px,5vw,64px)/1.05 var(--serif);color:var(--green);max-width:720px}
+.sec-h em{font-style:normal;color:var(--orange)}
+.sec-s{margin-top:14px;max-width:520px;color:#2E5A3A;line-height:1.7}
+.cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2.5vw,32px);margin-top:clamp(36px,6vw,70px);align-items:start}
+.cgrid figure{border-radius:10px;overflow:hidden;box-shadow:0 26px 50px rgba(6,59,37,.2);will-change:transform}
+.cgrid figure:nth-child(2){margin-top:70px}.cgrid figure:nth-child(3){margin-top:20px}
+.cgrid{align-items:start}
+.cgrid img{display:block;width:100%;height:auto;object-fit:contain}
+.ban{margin-top:clamp(30px,5vw,60px);border-radius:10px;overflow:hidden;box-shadow:0 26px 50px rgba(6,59,37,.2)}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr 1fr}.cgrid figure:nth-child(3){grid-column:1/-1;margin-top:0}.cgrid figure:nth-child(2){margin-top:40px}}
+/* IN THE WILD */
+.wild{background:var(--green);color:var(--cream);padding:clamp(70px,10vw,140px) 0}
+.wild .sec-h{color:var(--cream)}.wild .sec-h em{color:var(--gold)}.wild .sec-s{color:#BFD8C4}
+.scenes{display:grid;gap:clamp(18px,3vw,40px);margin-top:clamp(36px,6vw,70px)}
+.scene{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;transform:none}
+.scene figcaption{position:absolute;left:22px;bottom:22px;padding:10px 20px;border-radius:999px;background:var(--cream);color:var(--green);font-weight:700;font-size:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px)}
+.row2 .scene img{aspect-ratio:auto}
+@media(max-width:700px){.row2{grid-template-columns:1fr}.scene img{aspect-ratio:auto}}
+/* BRAND */
+.brand{padding:clamp(70px,10vw,140px) 0;background:var(--cream)}
+.bgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(14px,2.4vw,28px);margin-top:clamp(30px,5vw,60px);align-items:stretch}
+.logo-card{position:relative;overflow:hidden;background:#fff;border-radius:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:clamp(34px,5vw,64px) 24px;box-shadow:0 22px 46px rgba(6,59,37,.12);min-height:300px}
+.logo-card::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#FBE9B4,transparent 68%);top:50%;left:50%;transform:translate(-50%,-56%)}
+.logo-card .lg{position:relative;z-index:1;width:min(60%,230px)}
+.logo-card .tag{position:relative;z-index:1;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.pal{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:10px}
+.pal div{border-radius:20px;min-height:120px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px;font-weight:600;transition:transform .25s}
+.pal div:hover{transform:translateY(-6px)}
+.pal span{font-weight:500;opacity:.8;font-size:11px;font-family:ui-monospace,Menlo,monospace;margin-top:2px}
+.cans{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,2vw,22px);margin-top:clamp(18px,3vw,34px)}
+.can{position:relative;border-radius:30px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8% 0 15%}
+.can::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.55);left:11%;top:12%}
+.can img{position:relative;height:100%;width:auto;max-width:62%;object-fit:contain;filter:drop-shadow(0 26px 20px rgba(0,0,0,.3));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.can:hover img{transform:translateY(-10px) rotate(-3deg) scale(1.04)}
+.can b{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.wide{margin-top:clamp(18px,3vw,34px);border-radius:10px;overflow:hidden;box-shadow:0 22px 46px rgba(6,59,37,.18)}
+@media(max-width:860px){.bgrid{grid-template-columns:1fr}.cans{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pal{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}}
+/* FOOT */
+.foot{background:var(--green);color:#BFD8C4;text-align:center;padding:60px 20px;font-size:13px;line-height:1.8}
+.foot .back{display:inline-block;margin-top:14px;color:#F5A600;font-weight:600;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color .2s}.foot .back:hover{border-color:#F5A600}
+.foot img{height:50px;width:auto;margin:0 auto 18px;filter:brightness(0) invert(1);opacity:.9}
+/* MOTION */
+.prog{position:fixed;top:0;left:0;right:0;height:4px;z-index:60;pointer-events:none}
+.prog i{display:block;height:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--gold),var(--orange))}
+.prog img{position:absolute;left:0;top:5px;width:26px;height:auto;will-change:transform;filter:drop-shadow(0 3px 3px rgba(0,0,0,.25))}
+.ln{display:block;overflow:hidden;padding:0 .04em .14em;margin-bottom:-.14em}
+.ln i{display:block;font-style:normal}
+@media(prefers-reduced-motion:no-preference){.ln i{transform:translateY(112%);animation:lnUp 1.2s var(--ease) .15s forwards}.ln:nth-child(2) i{animation-delay:.32s}}
+@keyframes lnUp{to{transform:none}}
+html.js .rv{opacity:0;transform:translate3d(0,48px,0);transition:opacity 1s ease,transform 1.2s var(--ease);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
+html.js .cl{clip-path:inset(30% 22% 30% 22% round 28px);transition:clip-path 1.4s var(--ease);transition-delay:var(--d,0s)}
+html.js .cl.in{clip-path:inset(-90px -90px -110px -90px round 28px)}
+html.js .cl:not(.pi) img{transform:scale(1.28);transition:transform 1.8s var(--ease);transition-delay:var(--d,0s)}
+html.js .cl.in:not(.pi) img{transform:scale(1)}
+.sp .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .16em;margin:0 -.02em -.16em}
+.sp .w i{display:inline-block;font-style:normal}
+html.js .sp .w i{transform:translateY(112%);transition:transform 1.1s var(--ease);transition-delay:calc(var(--i)*70ms)}
+html.js .sp.in .w i{transform:none}
+.fi h2 .wd{display:inline-block;white-space:nowrap}
+html.js .fi h2 .ch{display:inline-block;transform:translateY(55%) rotate(8deg);opacity:0;transition:transform .9s var(--ease),opacity .5s ease;transition-delay:calc(var(--i)*32ms)}
+html.js .fi.on h2 .ch{transform:none;opacity:1}
+html.js .fi:not(.on) h2 .ch{transition-delay:0s}
+html.js .pal:not(.in) div{opacity:0}
+.pal.in div{animation:pop .9s var(--ease) backwards;animation-delay:calc(var(--i)*70ms)}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.92)}}
+html.js .can img{transform:translateY(60px) rotate(5deg);transition:transform 1.2s var(--ease)}
+html.js .can.in img{transform:none;transition-delay:calc(var(--d,0s) + .25s)}
+html.js .can.in:hover img{transform:translateY(-10px) rotate(-3deg) scale(1.04);transition-duration:.5s;transition-delay:0s}
+html.js .scene figcaption{opacity:0;transform:translateY(18px);transition:opacity .8s ease .8s,transform .9s var(--ease) .8s}
+html.js .scene.in figcaption{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fi,.fimg img,.fimg::before{transition:none}.scene img{transform:none}.fimg{transform:none}}
+</style>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="prog" id="prog" aria-hidden="true"><i></i><img src="pb/mark-a.webp" alt=""></div>
+<header class="nav" id="nav">
+  <a href="#top"><img src="pb/logo-a.webp" alt="Paper Boat"></a>
+  <ul><li><a href="#flavours">Flavours</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#wild">In the world</a></li><li><a href="#brand">Brand kit</a></li></ul>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="rv" data-par="26">
+      <div class="eyebrow">Advertising and brand kit</div>
+      <h1><span class="ln"><i>A little nostalgia.</i></span><span class="ln"><i><em>A fresh</em> format.</i></span></h1>
+      <p>Drinks and memories, reimagined as a campaign. Four flavours, one paper boat, and a summer you remember.</p>
+      <a class="btn" href="#flavours">Meet the flavours</a>
+    </div>
+    <div class="hero-art rv" style="--d:.25s">
+      <img class="main" data-par="-46" src="pb/hero-aam.webp" alt="Paper Boat Aamras hero ad" width="1000" height="1000">
+      <img class="boat" data-par="80" src="pb/mark-a.webp" alt="">
+      <span class="chip" data-par="44">Aamras</span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C180 80 360 0 540 30s360 50 540 10 270-30 360 0v40H0z" fill="#063B25"/></svg>
+</section>
+
+<div class="mq" aria-hidden="true"><div>
+  <span>drinks and memories</span><span>aamras</span><span>chilli guava</span><span>coconut water</span><span>jamun</span>
+  <span>drinks and memories</span><span>aamras</span><span>chilli guava</span><span>coconut water</span><span>jamun</span>
+</div></div>
+
+<section class="flv" id="flavours" data-flv>
+  <div class="stage">
+    <div class="wrap">
+      <div class="ftxt">
+        <div class="fi on" data-bg="#F7B731" data-fg="#3b1d00"><span class="no">01 / 04</span><h2>Aamras</h2><p>Summer in a can. Thick, golden mango the way it was served at home.</p></div>
+        <div class="fi" data-bg="#A8D26B" data-fg="#063B25"><span class="no">02 / 04</span><h2>Chilli guava</h2><p>Sweet, a little tangy, with just enough kick to wake you up.</p></div>
+        <div class="fi" data-bg="#BFE3C0" data-fg="#063B25"><span class="no">03 / 04</span><h2>Coconut water</h2><p>Cool and clean, straight from the coconut grove to your hand.</p></div>
+        <div class="fi" data-bg="#B79BE0" data-fg="#2B0B3F"><span class="no">04 / 04</span><h2>Jamun</h2><p>The deep purple taste of long school-holiday afternoons.</p></div>
+      </div>
+      <div class="fimg">
+        <img class="on" src="pb/hero-aam.webp" alt="Aamras hero ad" loading="lazy">
+        <img src="pb/hero-guava.webp" alt="Chilli guava hero ad" loading="lazy">
+        <img src="pb/hero-coco.webp" alt="Coconut water hero ad" loading="lazy">
+        <img src="pb/hero-jamun.webp" alt="Jamun hero ad" loading="lazy">
+      </div>
+    </div>
+    <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="hint">Scroll</div>
+  </div>
+</section>
+
+<section class="camp" id="campaign">
+  <div class="wrap">
+    <div><div class="eyebrow rv">The campaign</div>
+    <h2 class="sec-h sp" data-split style="margin-top:12px">Posters, stories and <em>banners</em></h2>
+    <p class="sec-s rv" style="--d:.3s">One look across every format, from the street to the phone screen.</p></div>
+    <div class="cgrid">
+      <figure class="cl" data-par="-30"><img src="pb/poster.webp" alt="Paper Boat summer poster" loading="lazy"></figure>
+      <figure class="cl" data-par="30"><img src="pb/story.webp" alt="Paper Boat social story" loading="lazy"></figure>
+      <figure class="cl" data-par="-14"><img src="pb/square.webp" alt="Paper Boat social post" loading="lazy"></figure>
+    </div>
+    <div class="ban cl"><img src="pb/banner.webp" alt="Paper Boat web banner" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="wild" id="wild">
+  <div class="wrap">
+    <div><div class="eyebrow rv" style="color:var(--gold)">Out in the world</div>
+    <h2 class="sec-h sp" data-split style="margin-top:12px">Seen on the <em>commute</em> and the shelf</h2>
+    <p class="sec-s rv" style="--d:.3s">Placements for a metro station and a supermarket display.</p></div>
+    <div class="scenes">
+      <figure class="scene cl"><img src="pb/metro.webp" alt="Paper Boat metro station ad" loading="lazy"><figcaption>Metro station</figcaption></figure>
+      <figure class="scene cl"><img src="pb/shelf.webp" alt="Paper Boat supermarket display" loading="lazy"><figcaption>Supermarket stand</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="brand" id="brand">
+  <div class="wrap">
+    <div><div class="eyebrow rv">Brand kit</div>
+    <h2 class="sec-h sp" data-split style="margin-top:12px">Colour, logo and <em>cans</em></h2></div>
+    <div class="bgrid">
+      <div class="logo-card rv"><img class="lg" src="pb/logo-a.webp" alt="Paper Boat logo"><span class="tag">Logo</span></div>
+      <div class="pal rv">
+        <div style="background:#F8F0D8;color:#063B25;box-shadow:inset 0 0 0 1px #E3D8B5">Cream<span>#F8F0D8</span></div>
+        <div style="background:#063B25;color:#F8F0D8">Deep green<span>#063B25</span></div>
+        <div style="background:#159447;color:#fff">Leaf green<span>#159447</span></div>
+        <div style="background:#B5D63B;color:#063B25">Fresh lime<span>#B5D63B</span></div>
+        <div style="background:#632179;color:#fff">Jamun<span>#632179</span></div>
+        <div style="background:#F5A600;color:#3b1d00">Mango gold<span>#F5A600</span></div>
+        <div style="background:#F5640A;color:#fff">Mango orange<span>#F5640A</span></div>
+        <div style="background:#2B2B2B;color:#fff">Charcoal<span>#2B2B2B</span></div>
+      </div>
+    </div>
+    <div class="cans">
+      <div class="can rv" style="background:#F7D77A;color:#3b1d00"><img src="pb/can-aam.webp" alt="Aamras can" loading="lazy"><b>Aamras</b></div>
+      <div class="can rv" style="background:#CDE79A;color:#063B25"><img src="pb/can-guava.webp" alt="Chilli guava can" loading="lazy"><b>Chilli guava</b></div>
+      <div class="can rv" style="background:#BFE3C0;color:#063B25"><img src="pb/can-coco.webp" alt="Coconut water can" loading="lazy"><b>Coconut water</b></div>
+      <div class="can rv" style="background:#D8C2F0;color:#2B0B3F"><img src="pb/can-jamun.webp" alt="Jamun can" loading="lazy"><b>Jamun</b></div>
+    </div>
+    <div class="wide cl"><img src="pb/lineup.webp" alt="Paper Boat can line-up" loading="lazy"></div>
+    <div class="wide cl"><img src="pb/pouch.webp" alt="Paper Boat pouch social campaign" loading="lazy"></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <img src="pb/logo-a.webp" alt="">
+  <p>Advertising and brand kit by Sathya Priyadarshini Murugadoss.<br>Paper Boat belongs to its owners.</p>
+  <a class="back" href="../Sathya_Portfolio.html#work">Back to portfolio →</a>
+</footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(q,c){return [].slice.call((c||document).querySelectorAll(q))};
+  var nav=document.getElementById('nav'),prog=document.getElementById('prog'),pbar=prog.children[0],pboat=prog.children[1];
+  /* split headings into masked words */
+  $('[data-split]').forEach(function(el){
+    var n=0;el.setAttribute('aria-label',el.textContent.replace(/\s+/g,' ').trim());
+    (function walk(node){[].slice.call(node.childNodes).forEach(function(c){
+      if(c.nodeType===3){var f=document.createDocumentFragment();
+        c.nodeValue.split(/(\s+)/).forEach(function(t){if(!t)return;
+          if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(' '));return}
+          var w=document.createElement('span'),i=document.createElement('i');w.className='w';w.setAttribute('aria-hidden','true');i.style.setProperty('--i',n++);i.textContent=t;w.appendChild(i);f.appendChild(w)});
+        c.parentNode.replaceChild(f,c)}
+      else if(c.nodeType===1)walk(c)})})(el)});
+  /* split flavour names into letters */
+  $('.fi h2').forEach(function(h){var t=h.textContent,n=0;h.setAttribute('aria-label',t);h.textContent='';
+    t.split(' ').forEach(function(wd,k){if(k)h.appendChild(document.createTextNode(' '));var w=document.createElement('span');w.className='wd';w.setAttribute('aria-hidden','true');
+      wd.split('').forEach(function(ch){var s=document.createElement('span');s.className='ch';s.style.setProperty('--i',n++);s.textContent=ch;w.appendChild(s)});h.appendChild(w)})});
+  /* stagger */
+  $('.cgrid,.cans,.scenes,.row2').forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--d',(i*.14)+'s')})});
+  $('.pal div').forEach(function(d,i){d.style.setProperty('--i',i)});
+  /* reveal on enter */
+  var tg=$('.rv,.cl,[data-split],.pal');
+  function show(e){e.classList.add('in')}
+  if(reduce||!('IntersectionObserver' in window)){tg.forEach(show)}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});tg.forEach(function(e){io.observe(e)});
+    setTimeout(function(){tg.forEach(function(e){if(e.classList.contains('in'))return;var r=e.getBoundingClientRect();if(r.top<innerHeight*.9&&r.bottom>0)show(e)})},400)}
+  /* flavours */
+  var sec=$('[data-flv]')[0],items=$('.fi',sec),imgs=$('.fimg img',sec),dots=$('.dots i',sec),fimg=$('.fimg',sec)[0],cur=-1,n=items.length;
+  function setF(i){if(i===cur)return;cur=i;
+    [items,imgs,dots].forEach(function(l){l.forEach(function(e,k){e.classList.toggle('on',k===i);e.classList.toggle('past',k<i)})});
+    var a=items[i];sec.style.setProperty('--bg',a.dataset.bg);sec.style.setProperty('--fg',a.dataset.fg);fimg.style.setProperty('--sc',(.9+i*.07).toFixed(2))}
+  /* measured positions */
+  var par=$('[data-par]').map(function(e){return{e:e,a:parseFloat(e.dataset.par),y:0}});
+  var pim=$('.pi').map(function(f){return{f:f,i:f.querySelector('img'),y:0,h:1}});
+  var mq=$('.mq div')[0],mqx=0,mqw=0,secTop=0,secH=1;
+  function measure(){
+    par.forEach(function(o){var t=o.e.style.translate;o.e.style.translate='none';var r=o.e.getBoundingClientRect();o.y=r.top+scrollY+r.height/2;o.e.style.translate=t});
+    pim.forEach(function(o){var r=o.f.getBoundingClientRect();o.y=r.top+scrollY+r.height/2;o.h=r.height});
+    var r=sec.getBoundingClientRect();secTop=r.top+scrollY;secH=r.height;mqw=mq.scrollWidth/2}
+  var mt;function rm(){clearTimeout(mt);mt=setTimeout(measure,120)}
+  addEventListener('resize',rm);addEventListener('load',rm);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rm);
+  $('img').forEach(function(i){if(!i.complete)i.addEventListener('load',rm)});
+  /* scroll state */
+  var ty=scrollY,sy=scrollY,vel=0,last=scrollY;
+  addEventListener('scroll',function(){ty=scrollY;nav.classList.toggle('s',ty>40);var d=ty-last;if(Math.abs(d)>6){nav.classList.toggle('h',d>0&&ty>240);last=ty}},{passive:true});
+  function frame(){
+    var H=innerHeight,max=Math.max(1,document.documentElement.scrollHeight-H),p=Math.min(1,Math.max(0,sy/max));
+    pbar.style.transform='scaleX('+p.toFixed(4)+')';
+    pboat.style.transform='translate3d('+(p*(innerWidth-30)).toFixed(1)+'px,0,0) rotate('+Math.max(-14,Math.min(14,vel*.5)).toFixed(1)+'deg)';
+    var fp=Math.min(.999,Math.max(0,(sy-secTop)/Math.max(1,secH-H))),fi=Math.floor(fp*n),lp=fp*n-fi;setF(fi);
+    if(reduce)return;
+    fimg.style.setProperty('--ty',((.5-lp)*44).toFixed(1)+'px');fimg.style.setProperty('--rot',((lp-.5)*5).toFixed(2)+'deg');
+    par.forEach(function(o){var c=(o.y-sy-H/2)/H;if(Math.abs(c)<1.6)o.e.style.translate='0 '+(c*o.a).toFixed(1)+'px'});
+    pim.forEach(function(o){var c=(o.y-sy-H/2)/(H/2+o.h/2);if(Math.abs(c)<=1.1)o.i.style.transform='translate3d(0,'+(-c*o.h*.07).toFixed(1)+'px,0) scale(1.16)'});
+    mqx-=.7+Math.min(Math.abs(vel)*.4,16);if(mqw&&mqx<=-mqw)mqx+=mqw;mq.style.transform='translate3d('+mqx.toFixed(1)+'px,0,0)'}
+  function tick(){if(!document.hidden){sy+=(ty-sy)*.12;if(Math.abs(ty-sy)<.05)sy=ty;vel=ty-sy;frame()}requestAnimationFrame(tick)}
+  measure();requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
